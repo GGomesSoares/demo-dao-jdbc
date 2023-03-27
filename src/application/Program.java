@@ -2,8 +2,6 @@ package application;
 
 import java.util.List;
 
-import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
-
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
@@ -23,6 +21,12 @@ public class Program {
 		System.out.println("=== TEST 2: seller findByDepartment");
 		Department department = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(department);
+		for (Seller obj : list) {
+			System.out.println(obj);
+		}
+
+		System.out.println("=== TEST 3: seller findAll");
+		list = sellerDao.findAll();
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
